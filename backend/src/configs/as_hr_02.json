@@ -1,0 +1,47 @@
+{
+  "report_title": "Health & Fitness Report",
+  "sections": [
+    {
+      "title": "Overall Results",
+      "fields": [
+        { "label": "Overall Health Score", "path": "$.accuracy", "default": "N/A" }
+      ]
+    },
+    {
+      "title": "Key Body Vitals",
+      "fields": [
+        { "label": "Heart Rate", "path": "$.vitalsMap.vitals.heart_rate", "default": "N/A" },
+        { "label": "Blood Pressure Systolic", "path": "$.vitalsMap.vitals.bp_sys", "default": "N/A" },
+        { "label": "Blood Pressure Diastolic", "path": "$.vitalsMap.vitals.bp_dia", "default": "N/A" }
+      ]
+    },
+    {
+      "title": "Fitness Levels",
+      "fields": [
+        { "label": "Jog Test (seconds)", "path": "$.exercises[?(@.id==235)].setList[0].time", "default": "N/A" }
+      ]
+    },
+    {
+      "title": "Body Composition",
+      "fields": [
+        {
+          "label": "BMI",
+          "path": "$.bodyCompositionData.BMI",
+          "default": "N/A",
+          "classifications": [
+            { "label": "Underweight", "min": 0, "max": 18.4 },
+            { "label": "Normal", "min": 18.5, "max": 24.9 },
+            { "label": "Overweight", "min": 25, "max": 29.9 },
+            { "label": "Obese", "min": 30, "max": 100 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Posture",
+      "fields": [
+        { "label": "Posture", "path": "$.vitalsMap.posture", "default": "N/A" }
+      ]
+    }
+  ]
+}

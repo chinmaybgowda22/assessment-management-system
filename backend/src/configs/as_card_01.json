@@ -1,0 +1,31 @@
+{
+  "report_title": "Cardiac Assessment Report",
+  "sections": [
+    {
+      "title": "Overall Results",
+      "fields": [
+        { "label": "Overall Health Score", "path": "$.accuracy", "default": "N/A" }
+      ]
+    },
+    {
+      "title": "Key Body Vitals",
+      "fields": [
+        { "label": "Heart Rate", "path": "$.vitalsMap.vitals.heart_rate", "default": "N/A" },
+        { "label": "Blood Pressure Systolic", "path": "$.vitalsMap.vitals.bp_sys", "default": "N/A" },
+        { "label": "Blood Pressure Diastolic", "path": "$.vitalsMap.vitals.bp_dia", "default": "N/A" }
+      ]
+    },
+    {
+      "title": "Cardiovascular Endurance",
+      "fields": [
+        { "label": "Jog Test (seconds)", "path": "$.exercises[?(@.id==235)].setList[0].time", "default": "N/A" }
+      ]
+    },
+    {
+      "title": "Body Composition",
+      "fields": [
+        { "label": "BMI", "path": "$.bodyCompositionData.BMI", "default": "N/A" }
+      ]
+    }
+  ]
+}
