@@ -16,7 +16,7 @@ app.use("/auth", authRoutes);
 app.use("/", reportRoutes);
 
 // Serve PDFs from backend/generated at /generated
-app.use("/generated", express.static(path.join(__dirname, "..", "generated")));
+app.use("/generated", express.static(path.join(__dirname, "generated")));
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));

@@ -8,7 +8,7 @@ const router = express.Router();
 const data = require("../../data");
 
 // Output folder is backend/generated (same as index.js serves)
-const OUTPUT_DIR = path.join(__dirname, "..", "generated");
+const OUTPUT_DIR = path.join(__dirname, "generated"); // backend/src/generated
 
 // Configs folder is backend/src/configs
 const CONFIG_DIR = path.join(__dirname, "..", "configs");
